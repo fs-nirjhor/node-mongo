@@ -12,6 +12,15 @@ app.get("/", (req, res) => {
 
 app.get("/laptop", (req, res) => {
 	res.send(laptop);
+}); 
+
+const users = ["Farhan", "Sadik", 'Nirjhor', 'Jhor', 'Shaila', 'Ferdous', 'Labonno'];
+
+app.get("/users/:id", (req, res) => {
+	console.log(req.query); 
+	//localhost:3000/users/4?sort=name&lang=eng
+	const user = users[req.params.id];
+	res.send(user);
 });
 
 app.listen(port, () => {
